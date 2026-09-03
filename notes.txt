@@ -1,3 +1,4 @@
 1)step1
 create .gitignore file
 2)push code to git repo
+3)update jenkins file

@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/YOUR_USERNAME/linear-regression-ml.git'
+                    url: 'https://github.com/mohdkhan2406/mlops'
             }
         }
 
