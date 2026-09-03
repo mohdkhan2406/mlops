@@ -1,0 +1,3 @@
+1)step1
+create .gitignore file
+2)push code to git repo
