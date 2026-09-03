@@ -4,17 +4,13 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/mohdkhan2406/mlops'
-            }
-        }
-
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    python3 -m pip install -r requirements.txt
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
                 '''
             }
         }
@@ -22,6 +18,7 @@ pipeline {
         stage('Test ML Application') {
             steps {
                 sh '''
+                    . venv/bin/activate
                     python3 -c "import pandas; import sklearn; import flask; print('Dependencies OK')"
                 '''
             }
