@@ -40,7 +40,7 @@ pipeline {
 
                     docker run -d \
                         --name linear-regression-ml \
-                        -p 5000:5001 \
+                        -p 5000:5000 \
                         linear-regression-ml:latest
                 '''
             }
