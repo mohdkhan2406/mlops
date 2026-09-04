@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from sklearn.linear_model import LinearRegression
 import pandas as pd
+import os
 
 app = Flask(__name__)
 
@@ -74,5 +75,5 @@ if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
         port=5000,
-        debug=True
+        debug=os.environ.get("FLASK_DEBUG", "0") == "1"
     )
